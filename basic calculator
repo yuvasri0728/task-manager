@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO7bWt6JZ98oO2k714czkAL",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/yuvasri0728/task-manager/blob/main/basic%20calculator\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sCfCYiDBmsfL",
+        "outputId": "b2818bdb-448f-4bf1-826e-0721370d819d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Select Operation:\n",
+            "1. Addition\n",
+            "2. Subtraction\n",
+            "3. Multiplication\n",
+            "4. Division\n",
+            "Enter choice (1/2/3/4): 1\n",
+            "Enter first number: 6\n",
+            "Enter second number: 9\n",
+            "Result: 15.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "def add(x, y):\n",
+        "    return x + y\n",
+        "\n",
+        "def subtract(x, y):\n",
+        "    return x - y\n",
+        "\n",
+        "def multiply(x, y):\n",
+        "    return x * y\n",
+        "\n",
+        "def divide(x, y):\n",
+        "    if y == 0:\n",
+        "        return \"Error! Division by zero.\"\n",
+        "    return x / y\n",
+        "\n",
+        "print(\"Select Operation:\")\n",
+        "print(\"1. Addition\")\n",
+        "print(\"2. Subtraction\")\n",
+        "print(\"3. Multiplication\")\n",
+        "print(\"4. Division\")\n",
+        "\n",
+        "choice = input(\"Enter choice (1/2/3/4): \")\n",
+        "\n",
+        "num1 = float(input(\"Enter first number: \"))\n",
+        "num2 = float(input(\"Enter second number: \"))\n",
+        "\n",
+        "if choice == '1':\n",
+        "    print(\"Result:\", add(num1, num2))\n",
+        "elif choice == '2':\n",
+        "    print(\"Result:\", subtract(num1, num2))\n",
+        "elif choice == '3':\n",
+        "    print(\"Result:\", multiply(num1, num2))\n",
+        "elif choice == '4':\n",
+        "    print(\"Result:\", divide(num1, num2))\n",
+        "else:\n",
+        "    print(\"Invalid Input\")\n"
+      ]
+    }
+  ]
+}
