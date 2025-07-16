@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOMkil7e2zd0u4LeVKInLuc",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/yuvasri0728/task-manager/blob/main/Number%20Guessing%20Game\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EFvFwggJQUJV",
+        "outputId": "e540204d-97d9-4677-b4ca-99476801fcc2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "🎯 Welcome to the Number Guessing Game!\n",
+            "I'm thinking of a number between 1 and 100.\n",
+            "Enter your guess: 7\n",
+            "🔺 Too high! Try again.\n",
+            "Enter your guess: 3\n",
+            "🔺 Too high! Try again.\n",
+            "Enter your guess: 1\n",
+            "✅ Correct! You guessed it in 3 attempts.\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def guess_the_number():\n",
+        "    number_to_guess = random.randint(1, 100)\n",
+        "    attempts = 0\n",
+        "    print(\"🎯 Welcome to the Number Guessing Game!\")\n",
+        "    print(\"I'm thinking of a number between 1 and 100.\")\n",
+        "\n",
+        "    while True:\n",
+        "        try:\n",
+        "            guess = int(input(\"Enter your guess: \"))\n",
+        "            attempts += 1\n",
+        "\n",
+        "            if guess < 1 or guess > 100:\n",
+        "                print(\"❗ Please enter a number between 1 and 100.\")\n",
+        "            elif guess < number_to_guess:\n",
+        "                print(\"🔻 Too low! Try again.\")\n",
+        "            elif guess > number_to_guess:\n",
+        "                print(\"🔺 Too high! Try again.\")\n",
+        "            else:\n",
+        "                print(f\"✅ Correct! You guessed it in {attempts} attempts.\")\n",
+        "                break\n",
+        "        except ValueError:\n",
+        "            print(\"⚠️ Invalid input. Please enter a number.\")\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    guess_the_number()\n"
+      ]
+    }
+  ]
+}
